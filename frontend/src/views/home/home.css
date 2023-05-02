@@ -1,0 +1,18 @@
+main {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.services {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     flex-grow: 1;
+     flex-shrink: 0;
+     justify-content: center;
+     gap: 1rem;
+     padding: 0 2rem;
+     max-width: 1300px;
+}
