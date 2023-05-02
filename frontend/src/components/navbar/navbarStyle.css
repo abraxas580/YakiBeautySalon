@@ -1,0 +1,155 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+     list-style: none;
+}
+
+.navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem 2rem 1rem 2rem;
+     background-color: #000;
+     box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+     position: sticky;
+     top: 0;
+}
+
+.logo-img {
+     color: white;
+     font-family: 'Poppins';
+}
+
+.navbar-options {
+     display: flex;
+     gap: 1rem;
+}
+
+.navbar-option {
+     position: relative;
+     color: white;
+     text-align: center;
+     font-family: 'Poppins';
+     text-transform: uppercase;
+     font-size: small;
+     letter-spacing: 0.1em;
+     transition: 0.5s;
+}
+
+.navbar-option:hover {
+     color: #d5bc71;
+}
+
+.navbar-option::before {
+     content: '';
+     position: absolute;
+     width: 100%;
+     transform: scaleX(0);
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: #d5bc71;
+     transform-origin: right;
+     transition: transform 0.5s ease-in-out;
+}
+
+.navbar-option:hover::before {
+     transform: scaleX(1);
+     transform-origin: left;
+}
+
+.logo {
+     width: 150px;
+}
+
+.hamburguer-menu {
+     display: none;
+     color: white;
+     gap: 1rem;
+}
+
+@media (min-width: 768px) {
+     .navbar-options-closed {
+       display: flex;
+       flex-direction: row;
+       gap: 1rem;
+     }
+}
+
+@media (max-width: 768px) {
+     .navbar-options {
+          position: fixed;
+          right: 0;
+          top: 80px;
+          background-color: #000;
+          width: 50%;
+          height: 100%;
+          padding-top: 2rem;
+          flex-direction: column;
+          align-items: center;
+          justify-content: start;
+          gap: 2rem;
+          overflow: hidden;
+          right: -100%;
+          animation: slide-in 0.4s ease-in-out forwards;
+          opacity: 0;
+          transform: translateX(100%);
+          z-index: 100;
+          transition: all 0.4s ease-out;
+          
+     }
+
+     @keyframes slide-in {
+          0% {
+            right: -100%;
+          }
+          100% {
+            right: 0; 
+          }
+     }
+
+     @keyframes slide-on {
+          0% {
+               left: -100%;
+          }
+          100% {
+               right: 0;
+          }
+     }
+
+
+     .navbar-options.fade-in {
+          /* estilos para el efecto de entrada */
+          opacity: 1;
+          transform: translateX(0);
+        }
+        
+        .navbar-options.fade-out {
+          /* estilos para el efecto de salida */
+          opacity: 0;
+          transform: translateX(100%);
+        }
+
+      
+
+     .navbar-options-closed {
+          display: none;
+     }
+
+     .navbar-option {
+          display: inline-block;
+     }
+
+     .hamburguer-menu {
+          display: flex;
+          color: white;
+          gap: 1rem;
+     }
+
+     .logo {
+          width: 120px;
+     }
+
+}
