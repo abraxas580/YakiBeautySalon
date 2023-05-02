@@ -84,7 +84,7 @@
           right: 0;
           top: 80px;
           background-color: #000;
-          width: 50%;
+          width: 40%;
           height: 100%;
           padding-top: 2rem;
           flex-direction: column;
@@ -98,7 +98,6 @@
           transform: translateX(100%);
           z-index: 100;
           transition: all 0.4s ease-out;
-          
      }
 
      @keyframes slide-in {
@@ -119,27 +118,27 @@
           }
      }
 
-
      .navbar-options.fade-in {
-          /* estilos para el efecto de entrada */
           opacity: 1;
           transform: translateX(0);
         }
         
         .navbar-options.fade-out {
-          /* estilos para el efecto de salida */
           opacity: 0;
           transform: translateX(100%);
         }
-
-      
 
      .navbar-options-closed {
           display: none;
      }
 
      .navbar-option {
-          display: inline-block;
+          display: inline;
+          width: 100%;
+          text-align: end;
+          padding-right: 2.5rem;
+          padding-bottom: 1rem;
+          
      }
 
      .hamburguer-menu {
